@@ -14,7 +14,7 @@
         {
             "name": "dashboard-staging",
             "source": "./plugins/dashboard-staging",
-            "description": "The staging dashboard (a test copy), for developers; with the dashboard plugin.",
+            "description": "The staging dashboard (a test copy where new work is tried first); with the dashboard plugin.",
             "version": "0.2.0"
         }
     ]

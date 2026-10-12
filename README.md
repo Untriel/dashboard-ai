@@ -8,15 +8,16 @@ In the Claude desktop app (Code) or Claude Code in a terminal, say:
 
 > Set me up with the website dashboard: follow https://github.com/Untriel/dashboard-ai/blob/main/SETUP.md
 
-Claude adds the plugin (asking you first), asks you to restart, and walks you through signing in on the
-dashboard. You need a dashboard account; the platform's owner adds you to the websites you work on.
+Claude adds the plugins (asking you first), asks you to restart, and walks you through signing in on the
+dashboards (production and staging, an account on each). You need a dashboard account; the platform's owner adds you to the websites you work on.
 
 ## What's in it
 
 - **`dashboard`:** the connection to the dashboard (production, the real websites), signed in as you, with
   your access and nothing more, and two skills: `designing-pages` (a page or section from the site's own
   blocks) and `filling-collections` (adding and updating a collection's entries).
-- **`dashboard-staging`:** the connection to staging, a test copy, for the platform's developers.
+- **`dashboard-staging`:** the connection to staging, a test copy where new work is tried first (set up
+  alongside by default).
 
 The house rules come from the server itself: drafts by default, the live website only when you ask, no
 personal data, your work shows as your own.
