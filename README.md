@@ -35,10 +35,11 @@ claude plugin install dashboard@dashboard-ai
 
 Restart Claude Code, then sign in when the `dashboard` connection asks (`/mcp` in a terminal).
 
-**Updates:** turn on auto-update for the marketplace (`/plugin` → Marketplaces → dashboard-ai → Enable
-auto-update, or `"autoUpdate": true` on its entry in `extraKnownMarketplaces`, as SETUP.md does): a while after a
-session starts Claude Code fetches new versions, and the next start uses them. By hand:
-`claude plugin marketplace update dashboard-ai`, then `claude plugin update dashboard@dashboard-ai`.
+**Updates:** in the terminal, auto-update for the marketplace (`/plugin` → Marketplaces → dashboard-ai → Enable
+auto-update, or `"autoUpdate": true` on its entry in `extraKnownMarketplaces`, as SETUP.md does) fetches new versions a
+while after a session starts. The Claude desktop app turns plugin updates off for its sessions: update there from
+the plugin's page (Update, then restart). By hand: `claude plugin marketplace update dashboard-ai`, then
+`claude plugin update dashboard@dashboard-ai`.
 
 ## claude.ai (in the browser)
 

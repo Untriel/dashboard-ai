@@ -28,9 +28,10 @@ them):
 ```
 
 Show them what you'll add and ask before writing it. Check the file is still valid JSON afterwards.
-`autoUpdate` keeps the plugin current: a while after a session starts, Claude Code fetches new versions by itself
-(marketplaces other than Anthropic's own don't update unless asked), and the next start uses them. When it
-already had the marketplace without `autoUpdate`, add the line to its entry.
+`autoUpdate` keeps the plugin current in the terminal (`claude`): a while after a session starts, Claude Code fetches
+new versions by itself, and the next start uses them. The Claude desktop app turns plugin updates off for its
+sessions, so there they're done by hand: tell the user that when a new version is announced, they open the
+Dashboard plugin's page and click Update (then restart).
 
 Two connections: `dashboard` is production (the real websites, the one to use unless they say otherwise) and
 `dashboard-staging` is staging, a test copy where new work is tried first. If they say they only need the real
