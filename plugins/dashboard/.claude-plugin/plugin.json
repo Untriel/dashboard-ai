@@ -1,6 +1,6 @@
 {
     "name": "dashboard",
-    "version": "0.1.0",
-    "description": "Connects Claude to the dashboard (production and staging) and adds the skills for designing pages and filling collections.",
+    "version": "0.2.0",
+    "description": "Connects Claude to the website dashboard and adds the skills for designing pages and filling collections.",
     "author": { "name": "Untriel" }
 }

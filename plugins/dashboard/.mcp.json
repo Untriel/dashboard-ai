@@ -3,10 +3,6 @@
         "dashboard": {
             "type": "http",
             "url": "https://api.bookingmanager.app/mcp"
-        },
-        "dashboard-staging": {
-            "type": "http",
-            "url": "https://bookingmanager-api-staging.royal-frog-60bb.workers.dev/mcp"
         }
     }
 }
