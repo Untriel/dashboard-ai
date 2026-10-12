@@ -1,0 +1,15 @@
+{
+    "name": "dashboard-ai",
+    "owner": { "name": "Untriel" },
+    "metadata": {
+        "description": "The client-website dashboard for Claude: its connections and the workflows for building pages and filling collections."
+    },
+    "plugins": [
+        {
+            "name": "dashboard",
+            "source": "./plugins/dashboard",
+            "description": "Connects Claude to the dashboard (production and staging) and adds the skills for designing pages and filling collections.",
+            "version": "0.1.0"
+        }
+    ]
+}
