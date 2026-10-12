@@ -43,7 +43,9 @@ session starts Claude Code fetches new versions, and the next start uses them. B
 ## claude.ai (in the browser)
 
 Settings → Connectors → Add custom connector: `https://api.bookingmanager.app/mcp`. The skills can be added as
-organization skills by an admin (zip each folder in `plugins/dashboard/skills/`).
+organization skills by an admin (zip each folder in `plugins/dashboard/skills/`). Claude in a web browser can't
+open the previews itself, so for designing pages the Claude desktop app is better: its built-in browser lets
+Claude look at its own work.
 
 ## Changing it
 

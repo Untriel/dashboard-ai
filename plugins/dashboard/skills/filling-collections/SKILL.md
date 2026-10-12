@@ -50,7 +50,8 @@ has one) is a block tree, written as the designing-pages skill says and checked 
 ## 3. Add and change entries
 
 - `create_entry`: saved as a **draft**, with a preview link and the editor's link. Its address comes from the
-  display field.
+  display field. With a browser, open the preview (desktop and phone width) and check the entry looks right in
+  its page; without one, give the user the link.
 - `update_entry`: `data` changes only the fields you send (null empties one); send the `updatedAt` you last
   saw. Someone changed it meanwhile: read it again and redo your change on that.
 - **Several at once:** agree the list with the user first, then go one entry at a time, at most 20 before you

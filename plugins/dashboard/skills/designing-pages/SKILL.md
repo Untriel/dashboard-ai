@@ -103,6 +103,21 @@ same check and refuse a tree with errors.
   refusal that someone changed it meanwhile means: read it again (`get_page`) and redo your change on that.
 - `preview_page` gives a fresh link when the old one has expired.
 
+## 5b. Look at it
+
+Check what you made the way a visitor sees it, before you call it done. The preview link needs no sign-in (it
+carries its own token):
+
+- **With a browser** (the Claude desktop app's built-in browser, Claude in Chrome): open the preview link at
+  desktop width (about 1280 px) and phone width (about 390 px), scroll the whole page, and look for what the
+  checker can't see: sections that don't match the rest of the site, spacing that's off, text running over or
+  too long for a phone, images cropped badly (a focal point, `update_upload`) or missing, a contrast problem.
+  Fix it with `update_page`, take a fresh preview, and look again. A screenshot of each width is a good thing to
+  show the user.
+- **Without one** (claude.ai in a web browser): say you can't see the page, give the user the link to look at
+  on their computer and phone, and ask what to change. For designing pages, recommend the Claude desktop app:
+  it has a browser, so it can check its own work.
+
 ## 6. Publishing, and changing a live page
 
 - **Publish only when the user asks** (`publish_page`); `published: false` takes a page back to a draft.
@@ -138,5 +153,6 @@ the same. New collection types: the collections-from-pages skill.
 
 ## Report
 
-Say what you made, the preview and editor links, what's a placeholder, and what the user should decide.
+Say what you made, the preview and editor links, what you checked in the browser (or that you couldn't),
+what's a placeholder, and what the user should decide.
 What you save shows as the user's own work in the dashboard's history: never mark content as written by AI.
