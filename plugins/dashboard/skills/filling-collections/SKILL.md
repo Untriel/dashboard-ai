@@ -37,7 +37,7 @@ By the field's key:
 | `number` | a number |
 | `boolean` | `true` / `false` |
 | `date` | `YYYY-MM-DD` |
-| `image` | `u/<key>` from `search_uploads` |
+| `image` | `u/<key>` from `search_uploads` (or `upload_from_url` for a file the user links) |
 | `images` | `[{ "image": "u/<key>", "alt": "…", "caption": "…" }]` |
 | `file` | a file's key from `search_uploads` |
 | `select` | one of its options' values |

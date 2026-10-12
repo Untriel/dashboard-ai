@@ -35,8 +35,8 @@ final say: they look at the preview, and nothing goes live until they ask.
   section spacing, card looks, heading sizes and levels, button styles, how images are used. A new page
   should look like it belongs.
 - **Images:** `search_uploads` (`mimeType: "image/"`, a search word) lists the file library with alt texts.
-  You can't make photos: use the library's, or ask the user to upload some first. An image option takes
-  `u/<key>`.
+  You can't make photos: use the library's, add one the user gives you an https link to (`upload_from_url`,
+  with an alt text; only files they may use), or ask them to upload some. An image option takes `u/<key>`.
 
 ## 3. Write the block tree
 
@@ -90,6 +90,11 @@ same check and refuse a tree with errors.
 - **A published page changes on the live website when it's saved.** Show the change first with
   `preview_page` (the change, unsaved), and save it with `update_page` and `live: true` only after the user
   says so. A new address for a published page adds a redirect from the old one (`addRedirect`, on by default).
+
+## Afterwards
+
+When the user asks: a redirect from an old address (`create_redirect`), publishing at a set time
+(`schedule_page`), or going back to an earlier version (`list_revisions`, `get_revision`, `restore_revision`).
 
 ## Detail templates
 
