@@ -61,4 +61,4 @@ If the list is empty, they aren't a member of any organization yet: the platform
 admin can ask you to join a client's organization as support (`list_all_organizations`, `join_as_support`).
 
 If a step fails, say what you saw; don't work around it. Their skills (`designing-pages`,
-`filling-collections`) come with the plugin: nothing else to install.
+`filling-collections`, `collections-from-pages`) come with the plugin: nothing else to install.
