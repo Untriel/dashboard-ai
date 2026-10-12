@@ -52,3 +52,5 @@ Claude look at its own work.
 Skills are plain Markdown (`plugins/dashboard/skills/<name>/SKILL.md`). Bump `version` in the plugin's
 `.claude-plugin/plugin.json` and in `.claude-plugin/marketplace.json` with every change, so installs pick it
 up. Keep to what the server's tools do: its instructions and tool descriptions are the reference.
+The server also offers these skills as its own prompts (for claude.ai and other clients without the plugin):
+after changing one, run `pnpm mcp:prompts` in the platform's repository and ship that with it.
