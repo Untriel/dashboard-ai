@@ -16,7 +16,8 @@ them):
 {
     "extraKnownMarketplaces": {
         "dashboard-ai": {
-            "source": { "source": "github", "repo": "Untriel/dashboard-ai" }
+            "source": { "source": "github", "repo": "Untriel/dashboard-ai" },
+            "autoUpdate": true
         }
     },
     "enabledPlugins": {
@@ -27,6 +28,9 @@ them):
 ```
 
 Show them what you'll add and ask before writing it. Check the file is still valid JSON afterwards.
+`autoUpdate` keeps the plugin current: a while after a session starts, Claude Code fetches new versions by itself
+(marketplaces other than Anthropic's own don't update unless asked), and the next start uses them. When it
+already had the marketplace without `autoUpdate`, add the line to its entry.
 
 Two connections: `dashboard` is production (the real websites, the one to use unless they say otherwise) and
 `dashboard-staging` is staging, a test copy where new work is tried first. If they say they only need the real
