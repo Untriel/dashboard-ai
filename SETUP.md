@@ -58,8 +58,7 @@ Tell them the difference in one line: staging is for trying things, production i
 - "How many visitors did [website] have this month?".
 
 If the list is empty, they aren't a member of any organization yet: the platform's owner adds them. A platform
-admin works in a client's website after joining its organization as support (Admin → Organizations in the
-dashboard).
+admin can ask you to join a client's organization as support (`list_all_organizations`, `join_as_support`).
 
 If a step fails, say what you saw; don't work around it. Their skills (`designing-pages`,
 `filling-collections`) come with the plugin: nothing else to install.

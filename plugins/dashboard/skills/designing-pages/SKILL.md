@@ -15,7 +15,8 @@ final say: they look at the preview, and nothing goes live until they ask.
   Use production unless the user says staging or test. Every change's answer names its `environment`: check
   it's the one you meant. An id from one environment isn't the same item in the other: look it up again.
 - **Which website:** `list_organizations` (use its slug as `organization`). A platform admin works in a
-  client's organization after joining it as support in the dashboard.
+  client's organization after joining it as support: when they ask, `list_all_organizations` and
+  `join_as_support` (and `leave_support` when the work is done, if they want).
 - **Ask** what the page is for, who reads it, what it must say and link to, and which images to use, unless
   the brief says so. **Never invent facts** about the client (prices, opening times, awards, distances): ask,
   or leave a clearly marked placeholder ("[price per night]") and say so.

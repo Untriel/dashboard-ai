@@ -14,7 +14,8 @@ collection's fields, and some also a body of blocks. You add and change them thr
 - **Which environment.** `dashboard` is production: the real websites. `dashboard-staging` is a test copy.
   Use production unless the user says staging or test. Every change's answer names its `environment`: check
   it's the one you meant. Ids differ between them: look things up in the one you work in.
-- **Which website:** `list_organizations` (its slug is `organization`).
+- **Which website:** `list_organizations` (its slug is `organization`). A platform admin joins a client's
+  organization as support first, when they ask (`list_all_organizations`, `join_as_support`).
 - **Never invent facts** (prices, sizes, features, opening times): use what the user gives you, or leave a
   marked placeholder and say so.
 
