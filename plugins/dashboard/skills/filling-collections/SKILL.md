@@ -55,6 +55,9 @@ has one) is a block tree, written as the designing-pages skill says and checked 
   saw. Someone changed it meanwhile: read it again and redo your change on that.
 - **Several at once:** agree the list with the user first, then go one entry at a time, at most 20 before you
   report back. Stop at the first refusal you can't explain, and say which ones were done.
+- `duplicate_entry` copies one as a draft (a quick start for a similar one). In a hand-ordered collection
+  (`manualOrder`), `move_entry` puts one after another (or first); grids showing that order change live, so only
+  when asked. `delete_entry` only when asked: Recently deleted keeps it 30 days (`restore_revision`).
 
 ## 4. Publishing, and changing live entries
 

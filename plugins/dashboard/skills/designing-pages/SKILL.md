@@ -71,6 +71,25 @@ final say: they look at the preview, and nothing goes live until they ask.
   spacing and backgrounds, not empty Spacers.
 - Never the platform's name in client content: the client's visitors never see it.
 
+## The same thing on several pages: a shared preset
+
+When the user wants the same content on more than one page (a booking strip, opening hours, a call to action,
+a contact block), don't paste copies: make it **one shared preset** and place its link on each page, so a later
+change updates them all.
+
+- `create_preset` with `kind: "block"`, `shared: true` and either the block (`blocks`, one block with its
+  content) or a block that's already on a page (`fromPageId` and `blockId`, from `get_page`). Its answer has the
+  link to place: `{ "type": "PresetLink", "data": { "presetId": "<id>" } }`.
+- Put the link where the block would go (a layout preset at the page's top level, a content preset in a slot),
+  with nothing else on it, and save each page as usual (`update_page`; a published page with `live: true` only
+  when asked). Replace the copies the pages already have.
+- `list_presets` shows the existing ones (`shared`): reuse one before making another.
+- Changing a shared preset (`update_preset`) changes every page that links it, on the live website too: say which
+  pages (its refusal lists them) and save with `live: true` only when the user asks. A linked preset can't be
+  deleted until its links are replaced.
+- A preset that isn't shared is a starting point: `create_preset` saves a section for the user to reuse in the
+  editor (inserted as a copy).
+
 ## 4. Check it
 
 `check_blocks` with the tree (and the page's spacings). Fix every error; read the warnings. The saves run the
@@ -93,15 +112,29 @@ same check and refuse a tree with errors.
 
 ## Afterwards
 
-When the user asks: a redirect from an old address (`create_redirect`), publishing at a set time
-(`schedule_page`), or going back to an earlier version (`list_revisions`, `get_revision`, `restore_revision`).
+When the user asks: a redirect from an old address (`create_redirect`, or many with `import_redirects`),
+publishing at a set time (`schedule_page`), going back to an earlier version (`list_revisions`, `get_revision`,
+`restore_revision`), a copy to start from (`duplicate_page`), leaving a page out of the sitemap or saving it for
+offline use (`update_page`), better alt texts or a focal point for an image (`update_upload`), or deleting a page
+(`delete_page`: Recently deleted keeps it 30 days, and `restore_revision` brings it back).
+
+## The header, the footer and popups
+
+- **Header and footer** (`get_header_footer`, `update_header_footer`; owners and admins): one block at the root,
+  the client's frame (`get_block_catalogue`: `frame: "header"` or `"footer"`), its areas filled with blocks. Start
+  from the current tree, change what was asked, keep the rest. It's on every page at once: save only when the
+  user asks, with the `updatedAt` you read.
+- **Popups and banners** (`list_popups`, `create_popup`, `update_popup`, `preview_popup`, `publish_popup`): the
+  kind's frame at the root (modal, bar, slide-in, fullscreen) with the content in its slot, and settings for when,
+  where and for whom. New ones are drafts; give the user the preview link (it opens the popup at once), and
+  publish or schedule only when they ask. A published one changes live only with `live: true`.
 
 ## Detail templates
 
 A collection's detail page (every entry gets it, like `/accommodation/<lodge>`) takes the entry's values
 through bindings (`"dataBindings": { "<option path>": "<field key>" }`) and `{{ field }}` tokens in text.
 `check_blocks` with the collection's id checks them against its fields; `update_page` on the template checks
-the same. Creating new collection types isn't possible through the connection yet: ask the platform's owner.
+the same. New collection types: the collections-from-pages skill.
 
 ## Report
 
