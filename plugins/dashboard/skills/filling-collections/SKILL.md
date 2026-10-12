@@ -56,13 +56,13 @@ has one) is a block tree, written as the designing-pages skill says and checked 
   saw. Someone changed it meanwhile: read it again and redo your change on that.
 - **Several at once:** agree the list with the user first, then go one entry at a time, at most 20 before you
   report back. Stop at the first refusal you can't explain, and say which ones were done.
-- `duplicate_entry` copies one as a draft (a quick start for a similar one). In a hand-ordered collection
+- `duplicate_item` (kind `entry`) copies one as a draft (a quick start for a similar one). In a hand-ordered collection
   (`manualOrder`), `move_entry` puts one after another (or first); grids showing that order change live, so only
-  when asked. `delete_entry` only when asked: Recently deleted keeps it 30 days (`restore_revision`).
+  when asked. `delete_item` only when asked: Recently deleted keeps it 30 days (`restore_revision`).
 
 ## 4. Publishing, and changing live entries
 
-- **Publish only when the user asks** (`publish_entry`; all required fields filled). `published: false` takes
+- **Publish only when the user asks** (`publish_item`, kind `entry`; all required fields filled). `published: false` takes
   one back to a draft.
 - **A published entry changes on the live website when it's saved.** Show the change first with
   `preview_entry`, and save it with `update_entry` and `live: true` only after the user says so.

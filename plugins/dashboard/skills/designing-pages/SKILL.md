@@ -120,7 +120,7 @@ carries its own token):
 
 ## 6. Publishing, and changing a live page
 
-- **Publish only when the user asks** (`publish_page`); `published: false` takes a page back to a draft.
+- **Publish only when the user asks** (`publish_item`, kind `page`); `published: false` takes it back to a draft.
 - **A published page changes on the live website when it's saved.** Show the change first with
   `preview_page` (the change, unsaved), and save it with `update_page` and `live: true` only after the user
   says so. A new address for a published page adds a redirect from the old one (`addRedirect`, on by default).
@@ -131,10 +131,10 @@ carries its own token):
 ## Afterwards
 
 When the user asks: a redirect from an old address (`create_redirect`, or many with `import_redirects`),
-publishing at a set time (`schedule_page`), going back to an earlier version (`list_revisions`, `get_revision`,
-`restore_revision`), a copy to start from (`duplicate_page`), leaving a page out of the sitemap or saving it for
+publishing at a set time (`schedule_item`), going back to an earlier version (`list_revisions`, `get_revision`,
+`restore_revision`), a copy to start from (`duplicate_item`), leaving a page out of the sitemap or saving it for
 offline use (`update_page`), better alt texts or a focal point for an image (`update_upload`), or deleting a page
-(`delete_page`: Recently deleted keeps it 30 days, and `restore_revision` brings it back).
+(`delete_item`: Recently deleted keeps it 30 days, and `restore_revision` brings it back).
 
 ## The header, the footer and popups
 
@@ -142,7 +142,7 @@ offline use (`update_page`), better alt texts or a focal point for an image (`up
   the client's frame (`get_block_catalogue`: `frame: "header"` or `"footer"`), its areas filled with blocks. Start
   from the current tree, change what was asked, keep the rest. It's on every page at once: save only when the
   user asks, with the `updatedAt` you read.
-- **Popups and banners** (`list_popups`, `create_popup`, `update_popup`, `preview_popup`, `publish_popup`): the
+- **Popups and banners** (`list_popups`, `create_popup`, `update_popup`, `preview_popup`, `publish_item`, `schedule_item`): the
   kind's frame at the root (modal, bar, slide-in, fullscreen) with the content in its slot, and settings for when,
   where and for whom. New ones are drafts; give the user the preview link (it opens the popup at once), and
   publish or schedule only when they ask. A published one changes live only with `live: true`.
