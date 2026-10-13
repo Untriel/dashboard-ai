@@ -31,12 +31,28 @@ final say: they look at the preview, and nothing goes live until they ask.
 
 ## 2. Look at the site first
 
-- `list_pages`, then `get_page` for the home page and a page like the one asked for. Match what you see:
-  section spacing, card looks, heading sizes and levels, button styles, how images are used. A new page
-  should look like it belongs.
+- `list_pages`, then `get_page` for the home page and a page like the one asked for. Take the site's
+  language from them: its colours, fonts, button styles, card looks, heading sizes and section spacing. A new
+  page should look like it belongs, but not like a copy of the page next to it.
 - **Images:** `search_uploads` (`mimeType: "image/"`, a search word) lists the file library with alt texts.
   You can't make photos: use the library's, add one the user gives you an https link to (`upload_from_url`,
   with an alt text; only files they may use), or ask them to upload some. An image option takes `u/<key>`.
+
+## 2b. Give it a design of its own
+
+Belonging to the site isn't the same as being plain. A page made only of heading, text and three cards in a row
+reads like a template; give it something to remember, within the site's language:
+
+- **A rhythm of sections:** vary them down the page. A full-width image or a band in the brand's colour, then a
+  calm text section, then a split layout (image beside text, alternating sides), then a grid. Not every section
+  the same width or background.
+- **A few strong moments:** a large photo with little text, a striking quote or testimonial, a number that
+  matters (years in business, distance to the beach) set big, a gallery or slider where there's more than one
+  good photo.
+- **Motion where the site has it:** blocks that animate in (their options in the catalogue) on a site that
+  already uses them, not on every block.
+- **Contrast you can read:** text and buttons stand out from their background (the browser check in 5b shows it).
+- Bolder is a choice the user can make: when they ask for something calmer or more striking, follow them.
 
 ## 3. Write the block tree
 
