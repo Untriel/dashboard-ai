@@ -37,6 +37,10 @@ final say: they look at the preview, and nothing goes live until they ask.
 - **Images:** `search_uploads` (`mimeType: "image/"`, a search word) lists the file library with alt texts.
   You can't make photos: use the library's, add one the user gives you an https link to (`upload_from_url`,
   with an alt text; only files they may use), or ask them to upload some. An image option takes `u/<key>`.
+- **Videos:** a video option (the Video block, a Hero's background, a gallery item's video) takes an MP4 or
+  WebM's key (`search_uploads` with `mimeType: "video/"` lists only those). Another video (an iPhone's `.mov`) is
+  refused: ask the user to convert it with Convert to MP4 in the dashboard's file library (it recommends a
+  preset; Background Loop for a Hero's background), then use the new file.
 
 ## 2b. Give it a design of its own
 

@@ -38,7 +38,7 @@ By the field's key:
 | `boolean` | `true` / `false` |
 | `date` | `YYYY-MM-DD` |
 | `image` | `u/<key>` from `search_uploads` (or `upload_from_url` for a file the user links) |
-| `images` | `[{ "image": "u/<key>", "alt": "…", "caption": "…" }]` |
+| `images` | `[{ "image": "u/<key>", "alt": "…", "caption": "…" }]`; an item may add `"video": "<key>"` of an MP4 or WebM (other videos: the user converts them in the file library first) |
 | `file` | a file's key from `search_uploads` |
 | `select` | one of its options' values |
 | `features` | a list of its options' values |
