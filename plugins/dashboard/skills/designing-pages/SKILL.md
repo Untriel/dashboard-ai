@@ -45,12 +45,14 @@ reads like a template; give it something to remember, within the site's language
 
 - **A rhythm of sections:** vary them down the page. A full-width image or a band in the brand's colour, then a
   calm text section, then a split layout (image beside text, alternating sides), then a grid. Not every section
-  the same width or background.
+  the same width or background. A Columns section's background (its Style tab) fills the whole screen as a band
+  while its content keeps to its Width; its card look is a panel instead. Columns don't go inside Columns: a
+  section is one row of columns, and the next section starts a new one.
 - **A few strong moments:** a large photo with little text, a striking quote or testimonial, a number that
   matters (years in business, distance to the beach) set big, a gallery or slider where there's more than one
   good photo.
-- **Motion where the site has it:** blocks that animate in (their options in the catalogue) on a site that
-  already uses them, not on every block.
+- **Movement, sparingly:** blocks don't animate in on scroll. What moves is a block's own option: a Stat
+  counts up, a Slider plays by itself, a grid's cards come in when visitors filter it. Use them where they help.
 - **Contrast you can read:** text and buttons stand out from their background (the browser check in 5b shows it).
 - Bolder is a choice the user can make: when they ask for something calmer or more striking, follow them.
 
@@ -82,7 +84,9 @@ reads like a template; give it something to remember, within the site's language
 - **Links:** a page of the site as `page:<id>` (`list_pages`, `find_page_by_path`), so the link follows the page
   when it moves; elsewhere a full https address. `<key>NewTab: true` opens a new tab.
 - **Forms and collections** by id: `list_forms`, `list_collections` (with their fields' keys). A grid's
-  `query` is JSON text: `{ "filters": [{ "field", "op", "value" }], "sortField", "sortDir" }`.
+  `query` is JSON text: `{ "filters": [{ "field", "op", "value" }], "sortField", "sortDir" }`. The operator
+  depends on the field's type: text `eq`, `neq`, `contains`; numbers and dates `eq`, `neq`, `gt`, `gte`, `lt`,
+  `lte`; a select `eq`, `neq`; yes/no `eq`; features `has` (the entry has that feature's value).
 - **One look per kind of thing** across the page; headings in order (one H1, then H2, H3); the Style tab for
   spacing and backgrounds, not empty Spacers.
 - Never the platform's name in client content: the client's visitors never see it.

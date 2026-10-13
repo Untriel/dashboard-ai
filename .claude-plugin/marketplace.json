@@ -9,13 +9,13 @@
             "name": "dashboard",
             "source": "./plugins/dashboard",
             "description": "Connects Claude to the website dashboard and adds the skills for designing pages, filling collections and turning pages into collections.",
-            "version": "0.10.0"
+            "version": "0.11.0"
         },
         {
             "name": "dashboard-staging",
             "source": "./plugins/dashboard-staging",
             "description": "The staging dashboard (a test copy where new work is tried first); with the dashboard plugin.",
-            "version": "0.10.0"
+            "version": "0.11.0"
         }
     ]
 }
