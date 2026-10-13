@@ -51,7 +51,7 @@ One `create_entry` per page, with its values taken from that page (drafts). Agre
 before reporting back; stop at a refusal you can't explain. Images: the `u/<key>` values the pages use.
 
 Show the user a few with `preview_entry`: each renders inside the template. With a browser, open those links
-yourself first (desktop and phone width) and compare them with the pages they came from; without one, give the
+yourself first (desktop and phone width, and their `previewDark` links when the answers have them) and compare them with the pages they came from; without one, give the
 user the links and ask them to compare.
 
 ## 5. Switching over (only when the user asks)

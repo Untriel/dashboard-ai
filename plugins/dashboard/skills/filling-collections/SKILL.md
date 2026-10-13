@@ -51,8 +51,9 @@ has one) is a block tree, written as the designing-pages skill says and checked 
 
 - `create_entry`: saved as a **draft**, with a preview link and the editor's link. Its address comes from the
   display field plus a random ending (`anna-rq2jr6t2`), as in the dashboard: when the entries get pages of their
-  own, give each a clean `slug` with `update_entry` (`anna`), unless the user wants it as it is. With a browser, open the preview (desktop and phone width) and check the entry looks right in
-  its page; without one, give the user the link.
+  own, give each a clean `slug` with `update_entry` (`anna`), unless the user wants it as it is. With a browser, open the preview (desktop and phone width, and its `previewDark`
+  link when the answer has one: the site has a dark mode) and check the entry looks right in its page; without
+  one, give the user the link.
 - `update_entry`: `data` changes only the fields you send (null empties one); send the `updatedAt` you last
   saw. Someone changed it meanwhile: read it again and redo your change on that.
 - One block of an entry's body (when the collection has bodies): `update_block` (kind `entry`, the

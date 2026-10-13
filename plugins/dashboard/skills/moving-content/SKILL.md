@@ -61,7 +61,8 @@ plan) from the user's answers.
   footer and redirects change the live website: without `live: true` the published pages, entries and popups
   come back as preview links (show them), and the rest is refused. Use `live: true` only when the user asks.
 - **Look at it.** Open the preview links and the new drafts' pages at desktop and phone width before calling it
-  done. Publishing new drafts is its own step (`publish_item`), when the user asks.
+  done, and their `previewDark` links too where the answers have them (the site has a dark mode: a fixed color
+  that reads well in light mode may not in dark). The apply answer's `lookAt` says the same. Publishing new drafts is its own step (`publish_item`), when the user asks.
 
 Moving the same items again later (after more work on staging) updates what the earlier transfer made, even if
 it was renamed here.

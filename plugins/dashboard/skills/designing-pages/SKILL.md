@@ -145,9 +145,10 @@ carries its own token):
 
 - **With a browser** (the Claude desktop app's built-in browser, Claude in Chrome): open the preview link at
   desktop width (about 1280 px) and phone width (about 390 px), scroll the whole page, and look for what the
-  checker can't see (on a site with a dark mode, also in it: add `&colorMode=dark` to the link): sections that don't match the rest of the site, spacing that's off, text running over or
+  checker can't see: sections that don't match the rest of the site, spacing that's off, text running over or
   too long for a phone, images cropped badly (a focal point, `update_upload`) or missing, a contrast problem.
-  Fix it with `update_page`, take a fresh preview, and look again. A screenshot of each width is a good thing to
+  On a site with a dark mode the answers also have a `previewDark` link: open it too (desktop width is enough),
+  for text or colors that don't read in dark. Fix it with `update_page`, take a fresh preview, and look again. A screenshot of each width is a good thing to
   show the user.
 - **Without one** (claude.ai in a web browser): say you can't see the page, give the user the link to look at
   on their computer and phone, and ask what to change. For designing pages, recommend the Claude desktop app:
