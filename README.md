@@ -14,9 +14,10 @@ dashboards (production and staging, an account on each). You need a dashboard ac
 ## What's in it
 
 - **`dashboard`:** the connection to the dashboard (production, the real websites), signed in as you, with
-  your access and nothing more, and three skills: `designing-pages` (a page or section from the site's own
-  blocks), `filling-collections` (adding and updating a collection's entries) and `collections-from-pages`
-  (similar pages turned into a collection with one detail template).
+  your access and nothing more, and four skills: `designing-pages` (a page or section from the site's own
+  blocks), `filling-collections` (adding and updating a collection's entries), `collections-from-pages`
+  (similar pages turned into a collection with one detail template) and `moving-content` (staging to
+  production, or between websites, with a plan shown first).
 - **`dashboard-staging`:** the connection to staging, a test copy where new work is tried first (set up
   alongside by default).
 
