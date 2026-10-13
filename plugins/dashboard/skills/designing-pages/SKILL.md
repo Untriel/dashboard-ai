@@ -122,6 +122,10 @@ same check and refuse a tree with errors.
   answer has a **preview link** (15 minutes) and the dashboard editor's link. Give the user both.
 - Change it with `update_page` (send the `updatedAt` you last saw; `blocks` replaces the whole tree). A
   refusal that someone changed it meanwhile means: read it again (`get_page`) and redo your change on that.
+- **A small change to one block** (a text, a color, an option, its Style tab, hiding it on phones): `update_block`
+  with its id from the tree you read, only the keys that change (`data`, `style`: null removes one; `visibility`),
+  and the `updatedAt`. The rest of the tree stays exactly as stored. Adding, moving or removing blocks is still
+  `update_page`.
 - `preview_page` gives a fresh link when the old one has expired.
 
 ## 5b. Look at it
@@ -144,7 +148,7 @@ carries its own token):
 - **Publish only when the user asks** (`publish_item`, kind `page`); `published: false` takes it back to a draft.
 - **A published page changes on the live website when it's saved.** Show the change first with
   `preview_page` (the change, unsaved), and save it with `update_page` and `live: true` only after the user
-  says so. A new address for a published page adds a redirect from the old one (`addRedirect`, on by default).
+  says so. For one block: `update_block` with `preview: true` first, then `live: true`. A new address for a published page adds a redirect from the old one (`addRedirect`, on by default).
 
 ## Afterwards
 
@@ -159,7 +163,8 @@ offline use (`update_page`), better alt texts or a focal point for an image (`up
 - **Header and footer** (`get_header_footer`, `update_header_footer`; owners and admins): one block at the root,
   the client's frame (`get_block_catalogue`: `frame: "header"` or `"footer"`), its areas filled with blocks. Start
   from the current tree, change what was asked, keep the rest. It's on every page at once: save only when the
-  user asks, with the `updatedAt` you read.
+  user asks, with the `updatedAt` you read. One block's options there (kind `header` or `footer`): `update_block`,
+  not the whole tree back. The same for a popup's or a preset's block.
 - **Popups and banners** (`list_popups`, `create_popup`, `update_popup`, `preview_popup`, `publish_item`, `schedule_item`): the
   kind's frame at the root (modal, bar, slide-in, fullscreen) with the content in its slot, and settings for when,
   where and for whom. New ones are drafts; give the user the preview link (it opens the popup at once), and

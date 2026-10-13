@@ -55,6 +55,8 @@ has one) is a block tree, written as the designing-pages skill says and checked 
   its page; without one, give the user the link.
 - `update_entry`: `data` changes only the fields you send (null empties one); send the `updatedAt` you last
   saw. Someone changed it meanwhile: read it again and redo your change on that.
+- One block of an entry's body (when the collection has bodies): `update_block` (kind `entry`, the
+  `collectionId`, the block's id) with only the keys that change, instead of sending the whole body back.
 - **Several at once:** agree the list with the user first, then go one entry at a time, at most 20 before you
   report back. Stop at the first refusal you can't explain, and say which ones were done.
 - `duplicate_item` (kind `entry`) copies one as a draft (a quick start for a similar one). In a hand-ordered collection
