@@ -124,9 +124,6 @@ carries its own token):
 - **A published page changes on the live website when it's saved.** Show the change first with
   `preview_page` (the change, unsaved), and save it with `update_page` and `live: true` only after the user
   says so. A new address for a published page adds a redirect from the old one (`addRedirect`, on by default).
-- **The user's app may ask them first.** Where it can show a question, a change to the live website (saving a
-  published page, publishing, deleting, a redirect, the header or footer) asks the user yes or no before it
-  happens. A no means nothing changed: say so, and don't try again unless they ask.
 
 ## Afterwards
 
