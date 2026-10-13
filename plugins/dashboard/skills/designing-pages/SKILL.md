@@ -58,6 +58,12 @@ reads like a template; give it something to remember, within the site's language
 - **Movement, sparingly:** blocks don't animate in on scroll. What moves is a block's own option: a Stat
   counts up, a Slider plays by itself, a grid's cards come in when visitors filter it. Use them where they help.
 - **Contrast you can read:** text and buttons stand out from their background (the browser check in 5b shows it).
+- **Light and dark mode:** a site may have both (the catalogue's `colors.darkMode`: the visitor switches). Prefer
+  the theme's colors (`colors.theme`, written as `var(--muted)`, `var(--primary)`…): they follow the mode. A fixed
+  background color (`#f5f1e8`) stays that color in both modes, and the text and colors inside it follow it by
+  themselves when it's clearly light or dark; set the Style tab's `surface` (`light`, `dark`) for a see-through
+  color or a background image. A fixed text color without such a background is unreadable in one of the modes
+  (the checker warns).
 - Bolder is a choice the user can make: when they ask for something calmer or more striking, follow them.
 
 ## 3. Write the block tree
@@ -139,7 +145,7 @@ carries its own token):
 
 - **With a browser** (the Claude desktop app's built-in browser, Claude in Chrome): open the preview link at
   desktop width (about 1280 px) and phone width (about 390 px), scroll the whole page, and look for what the
-  checker can't see: sections that don't match the rest of the site, spacing that's off, text running over or
+  checker can't see (on a site with a dark mode, also in it: add `&colorMode=dark` to the link): sections that don't match the rest of the site, spacing that's off, text running over or
   too long for a phone, images cropped badly (a focal point, `update_upload`) or missing, a contrast problem.
   Fix it with `update_page`, take a fresh preview, and look again. A screenshot of each width is a good thing to
   show the user.
