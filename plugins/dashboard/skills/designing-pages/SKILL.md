@@ -86,7 +86,7 @@ reads like a template; give it something to remember, within the site's language
 - **Forms and collections** by id: `list_forms`, `list_collections` (with their fields' keys). A grid's
   `query` is JSON text: `{ "filters": [{ "field", "op", "value" }], "sortField", "sortDir" }`. The operator
   depends on the field's type: text `eq`, `neq`, `contains`; numbers and dates `eq`, `neq`, `gt`, `gte`, `lt`,
-  `lte`; a select `eq`, `neq`; yes/no `eq`; features `has` (the entry has that feature's value).
+  `lte`; a select `eq`, `neq`; yes/no `eq`; features `has` (the entry has that feature's value; `eq` reads the same).
 - **One look per kind of thing** across the page; headings in order (one H1, then H2, H3); the Style tab for
   spacing and backgrounds, not empty Spacers.
 - Never the platform's name in client content: the client's visitors never see it.
@@ -104,8 +104,9 @@ change updates them all.
   with nothing else on it, and save each page as usual (`update_page`; a published page with `live: true` only
   when asked). Replace the copies the pages already have.
 - `list_presets` shows the existing ones (`shared`): reuse one before making another.
-- Changing a shared preset (`update_preset`) changes every page that links it, on the live website too: say which
-  pages (its refusal lists them) and save with `live: true` only when the user asks. A linked preset can't be
+- Changing a shared preset (`update_preset`) changes every page that links it. Where one of them is live (a
+  published page, the header or footer, a popup), say which (its refusal lists them) and save with `live: true`
+  only when the user asks; linked only from drafts, it saves as it is. A linked preset can't be
   deleted until its links are replaced.
 - A preset that isn't shared is a starting point: `create_preset` saves a section for the user to reuse in the
   editor (inserted as a copy).

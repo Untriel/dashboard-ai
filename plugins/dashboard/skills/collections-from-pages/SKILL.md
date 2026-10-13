@@ -60,8 +60,8 @@ In this order, telling the user each step:
 
 1. Publish the template and the entries (`publish_item`, kind `page` and `entry`).
 2. Redirect each old page's address to its entry's new one (`create_redirect`), unless they're the same.
-3. Take the old pages back to drafts (`publish_item` with `published: false`); delete them later in the
-   dashboard when the user is happy. Pages win over redirects, so the redirects only work once the old
+3. Take the old pages back to drafts (`publish_item` with `published: false`); delete them later
+   (`delete_item`, kept 30 days in Recently deleted) only when the user asks. Pages win over redirects, so the redirects only work once the old
    pages are drafts.
 4. A grid on the parent page that lists the entries (a Collection Grid) replaces any hand-made list.
 
