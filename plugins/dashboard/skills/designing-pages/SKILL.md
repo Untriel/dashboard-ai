@@ -93,7 +93,8 @@ reads like a template; give it something to remember, within the site's language
   `newItem`: write each item whole, starting from its `newItem`.
 - **Links:** a page of the site as `page:<id>` (`list_pages`, `find_page_by_path`), so the link follows the page
   when it moves, with a query or anchor after it when needed (`page:<id>?type=lodge#rates`: a page opened on a
-  filter); elsewhere a full https address. `<key>NewTab: true` opens a new tab.
+  filter). One collection entry's own page as `entry:<id>` (`list_entries`), which follows the entry too.
+  Elsewhere a full https address. `<key>NewTab: true` opens a new tab.
 - **Words over a photo** (an Image Tile, an Image Card): pick photos with a calm area where the title goes, and
   use the block's `overlay` where the photo is bright behind it.
 - **Forms and collections** by id: `list_forms`, `list_collections` (with their fields' keys). A grid's
@@ -139,6 +140,8 @@ same check and refuse a tree with errors.
   answer has a **preview link** (15 minutes) and the dashboard editor's link. Give the user both.
 - Change it with `update_page` (send the `updatedAt` you last saw; `blocks` replaces the whole tree). A
   refusal that someone changed it meanwhile means: read it again (`get_page`) and redo your change on that.
+- **Adding, moving or removing a few blocks** (a section, a block in a slot): `edit_blocks` with the item and its
+  `updatedAt`, rather than the whole tree back; a new block's ids come back. Many changes at once: `update_page`.
 - **A small change to one block** (a text, a color, an option, its Style tab, hiding it on phones): `update_block`
   with its id from the tree you read, only the keys that change (`data`, `style`: null removes one; `visibility`),
   and the `updatedAt`. The rest of the tree stays exactly as stored. Adding, moving or removing blocks is still
