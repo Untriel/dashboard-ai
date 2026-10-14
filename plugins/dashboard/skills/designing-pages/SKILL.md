@@ -99,6 +99,10 @@ reads like a template; give it something to remember, within the site's language
   `lte`; a select `eq`, `neq`; yes/no `eq`; features `has` (the entry has that feature's value; `eq` reads the same).
 - **One look per kind of thing** across the page; headings in order (one H1, then H2, H3); the Style tab for
   spacing and backgrounds, not empty Spacers.
+- **A heading section with its content below** (a title, then a row of cards in the next section): give the
+  content's section the Style tab's `spaceAbove` (e.g. `sm`), which replaces the page's space between sections
+  there, so the two stay paired whatever the page's spacing; not a negative top margin. Margins and padding
+  have phone values too (`marginTopMobile`, `paddingYMobile`…), for a section that needs less room on phones.
 - Never the platform's name in client content: the client's visitors never see it.
 
 ## The same thing on several pages: a shared preset
