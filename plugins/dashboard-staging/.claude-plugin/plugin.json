@@ -1,6 +1,6 @@
 {
     "name": "dashboard-staging",
-    "version": "0.20.0",
+    "version": "0.21.0",
     "description": "The staging dashboard (a test copy of the platform), where new work is tried first. Use it together with the dashboard plugin, which has the skills.",
     "author": { "name": "Untriel" }
 }
