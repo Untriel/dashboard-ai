@@ -1,6 +1,6 @@
 {
     "name": "dashboard",
-    "version": "0.19.0",
+    "version": "0.20.0",
     "description": "Connects Claude to the website dashboard and adds the skills for designing pages, filling collections and turning pages into collections.",
     "author": { "name": "Untriel" }
 }

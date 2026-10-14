@@ -26,8 +26,8 @@ final say: they look at the preview, and nothing goes live until they ask.
 - `get_block_catalogue` without `blocks`: every block in brief, where it may go and its slots, and a page's
   own settings (its spacings).
 - Then `get_block_catalogue` with the blocks you'll use (at most 30 at a time): their options with the
-  choices each offers, their defaults, and the Style tab's options every block has (margins, padding,
-  backgrounds, borders, widths).
+  choices each offers and their defaults. Add `style: true` once for the Style tab's options every block has
+  (margins and padding, also on phones, backgrounds, borders, widths); later calls can leave it out.
 
 ## 2. Look at the site first
 
@@ -92,7 +92,10 @@ reads like a template; give it something to remember, within the site's language
 - **List items** (a button, a slide, a line) are saved with their missing keys empty, not with the catalogue's
   `newItem`: write each item whole, starting from its `newItem`.
 - **Links:** a page of the site as `page:<id>` (`list_pages`, `find_page_by_path`), so the link follows the page
-  when it moves; elsewhere a full https address. `<key>NewTab: true` opens a new tab.
+  when it moves, with a query or anchor after it when needed (`page:<id>?type=lodge#rates`: a page opened on a
+  filter); elsewhere a full https address. `<key>NewTab: true` opens a new tab.
+- **Words over a photo** (an Image Tile, an Image Card): pick photos with a calm area where the title goes, and
+  use the block's `overlay` where the photo is bright behind it.
 - **Forms and collections** by id: `list_forms`, `list_collections` (with their fields' keys). A grid's
   `query` is JSON text: `{ "filters": [{ "field", "op", "value" }], "sortField", "sortDir" }`. The operator
   depends on the field's type: text `eq`, `neq`, `contains`; numbers and dates `eq`, `neq`, `gt`, `gte`, `lt`,
@@ -178,8 +181,12 @@ offline use (`update_page`), better alt texts or a focal point for an image (`up
 - **Header and footer** (`get_header_footer`, `update_header_footer`; owners and admins): one block at the root,
   the client's frame (`get_block_catalogue`: `frame: "header"` or `"footer"`), its areas filled with blocks. Start
   from the current tree, change what was asked, keep the rest. It's on every page at once: save only when the
-  user asks, with the `updatedAt` you read. One block's options there (kind `header` or `footer`): `update_block`,
-  not the whole tree back. The same for a popup's or a preset's block.
+  user asks, with the `updatedAt` you read (`get_header_footer` with `region` reads one of them). One block's
+  options there (kind `header` or `footer`): `update_block`, not the whole tree back. The same for a popup's or a
+  preset's block.
+- **Mega menus** (a Menu item that opens a mega menu: its blocks in the Menu's slot `mega-<id>`): on phones they
+  open in the menu drawer, where Columns keep their phone layout, so design each to read well as a single column
+  or two as well. The Menu's `backdrop` dims (or dims and blurs) the page behind an open one.
 - **Popups and banners** (`list_popups`, `create_popup`, `update_popup`, `preview_popup`, `publish_item`, `schedule_item`): the
   kind's frame at the root (modal, bar, slide-in, fullscreen) with the content in its slot, and settings for when,
   where and for whom. New ones are drafts; give the user the preview link (it opens the popup at once), and
