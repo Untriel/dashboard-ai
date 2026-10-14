@@ -29,6 +29,13 @@ carry only a short code, never the blocks or the files.
 - `preset`, `popup`, `form` by `id`; `header`, `footer`, `redirects` without one; a file (`kind: "upload"`,
   `key`).
 
+**Shared presets a page uses don't travel with it:** the page holds only a link to each (a `PresetLink` block,
+`data.presetId`; `get_page` shows them). On the target the link goes to a preset of the same name there, or is
+emptied when there's none. Before making the transfer, look for those links in the items' blocks; for each one,
+tell the user and offer to bring the preset along: add it as an item (`kind: "preset"`, its `id`), and it
+arrives shared, with the page linking to it. When it's not clear whether the target has it, the plan (step 2)
+shows it, and a new transfer with the preset added is quick.
+
 It answers a `code` (valid 24 hours) and `from` (the source's environment). It changes nothing.
 
 ## 2. Show the plan from the target
@@ -45,6 +52,14 @@ user its plan in plain words:
   (a link to nowhere, a grid with no collection), and `usedBy` names the blocks. Ask the user what they want:
   pick an item here (`map: { "<reference id>": "<id here>" }`), leave those blocks out
   (`leaveOutBlocks: [<block ids>]`), or accept the emptied uses.
+- **A shared preset** (a reference of kind `preset`) is a section of the page, so emptying it removes that
+  section:
+  - **Without a match**, offer first to bring it along: a new `create_transfer` on the source with the preset
+    added as an item (codes are per transfer), then plan that one.
+  - **With a match**, the page links to the preset here, so it shows this website's version of it, which may
+    differ from the source's (edited on one side since). Say so. If the user wants the source's version, bring
+    it along: it updates the preset here, and every page here that uses it changes with it (a preset shown on
+    a live page needs `live`).
 - **Files:** how many are copied, and how many this website has already (found by their content).
 
 Matched items keep their title and address here, unless the user wants otherwise (change those afterwards with
