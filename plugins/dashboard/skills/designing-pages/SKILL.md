@@ -106,6 +106,11 @@ reads like a template; give it something to remember, within the site's language
   `query` is JSON text: `{ "filters": [{ "field", "op", "value" }], "sortField", "sortDir" }`. The operator
   depends on the field's type: text `eq`, `neq`, `contains`; numbers and dates `eq`, `neq`, `gt`, `gte`, `lt`,
   `lte`; a select `eq`, `neq`; yes/no `eq`; features `has` (the entry has that feature's value; `eq` reads the same).
+- **A newsletter signup:** the Newsletter block (pages, popups, the footer), not a form. Its texts and button are
+  the block's; where the signups go (the website's own list or Mailchimp) and double opt-in are set on the
+  dashboard's Newsletter page, which you can't read or change (the list is personal data, the Mailchimp key a
+  secret). It takes signups only once that page is set up (Mailchimp connected, or the website's own email
+  sender verified): when you place one, tell the user to check the Newsletter page.
 - **One look per kind of thing** across the page; headings in order (one H1, then H2, H3); the Style tab for
   spacing and backgrounds, not empty Spacers.
 - **A heading section with its content below** (a title, then a row of cards in the next section): give the
