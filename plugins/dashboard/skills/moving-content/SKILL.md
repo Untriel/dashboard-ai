@@ -15,7 +15,8 @@ carry only a short code, never the blocks or the files.
   connection with different `organization`s.
 - **Find the items on the source:** `list_pages` (`find_page_by_path` for an address), `list_collections`,
   `list_entries`, `list_presets`, `list_popups`, `list_forms`. The header and footer, all redirects and single
-  files (by their key, from `search_uploads`) can go too.
+  files (by their key, from `search_uploads`) can go too. Copied files keep their folder: they land in the folder of
+  the same name on the target (made when missing).
 - **What never moves:** customers, form submissions, form recipients, email settings, domains, privacy, app and
   analytics settings. Say so if the user asks for those: they're set on each side.
 
