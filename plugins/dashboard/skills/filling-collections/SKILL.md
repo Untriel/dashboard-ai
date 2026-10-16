@@ -25,6 +25,10 @@ collection's fields, and some also a body of blocks. You add and change them thr
   field's `options`), its display field (the entry's name and address) and whether entries have a body.
 - `list_entries`, then `get_entry` for one or two existing entries: how long texts are, how images and
   features are used. New entries should read like the others.
+- **A collection filled from another system** (homes for sale from CampManager: its entries have a
+  `campManagerId`): the sync adds, updates and takes offline those entries every 6 hours, and overwrites what you
+  change in its fields. Change them in CampManager instead; fields the collection has besides (an intro of your
+  own), its pages and SEO stay. `update_collection` with `sync: "run"` syncs it now.
 
 ## 2. Field values
 
