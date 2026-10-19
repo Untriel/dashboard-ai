@@ -116,7 +116,8 @@ reads like a template; give it something to remember, within the site's language
   `source: "collection"` it lists the entries of the page's Collection Grid of that collection: turn on the grid's
   `entryAnchors`, so each entry is a jump target. With `source: "links"` it takes `#anchor` links to blocks with
   that anchor (their Style tab). In a grid's item design, Media & Text's `alternate` swaps the image's side on every
-  other entry, and a button's link can be one of the entry's fields (`{{ bookingUrl }}`): an entry without one has
+  other entry, its `media: "gallery"` shows several photos one at a time (`images`, bound to an entry's images
+  field), and a button's link can be one of the entry's fields (`{{ bookingUrl }}`): an entry without one has
   no button on the site.
 - **One look per kind of thing** across the page; headings in order (one H1, then H2, H3); the Style tab for
   spacing and backgrounds, not empty Spacers.
