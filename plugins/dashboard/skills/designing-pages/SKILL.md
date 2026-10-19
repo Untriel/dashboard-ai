@@ -111,6 +111,13 @@ reads like a template; give it something to remember, within the site's language
   dashboard's Newsletter page, which you can't read or change (the list is personal data, the Mailchimp key a
   secret). It takes signups only once that page is set up (Mailchimp connected, or the website's own email
   sender verified): when you place one, tell the user to check the Newsletter page.
+- **A long page of sections** (activities, facilities, a list of rooms): a `SectionMenu` among the page's sections
+  lets visitors jump between them (sticky under the header on wide screens, a bar at the bottom on phones). With
+  `source: "collection"` it lists the entries of the page's Collection Grid of that collection: turn on the grid's
+  `entryAnchors`, so each entry is a jump target. With `source: "links"` it takes `#anchor` links to blocks with
+  that anchor (their Style tab). In a grid's item design, Media & Text's `alternate` swaps the image's side on every
+  other entry, and a button's link can be one of the entry's fields (`{{ bookingUrl }}`): an entry without one has
+  no button on the site.
 - **One look per kind of thing** across the page; headings in order (one H1, then H2, H3); the Style tab for
   spacing and backgrounds, not empty Spacers.
 - **A heading section with its content below** (a title, then a row of cards in the next section): give the
