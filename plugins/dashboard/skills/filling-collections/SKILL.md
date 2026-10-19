@@ -37,7 +37,7 @@ By the field's key:
 | Type | Value |
 | --- | --- |
 | `text`, `textarea` | text |
-| `richtext` | simple HTML: `<p>`, `<strong>`, `<em>`, `<a href>`, lists |
+| `richtext` | simple HTML: `<p>`, `<strong>`, `<em>`, `<a href>`, lists; an image from the file library on its own line: `<img src="u/<key>" alt="…" data-size="sm">` (`sm`, `md`, `lg`, `full`; `data-align` `center` or `end`) |
 | `number` | a number |
 | `boolean` | `true` / `false` |
 | `date` | `YYYY-MM-DD` |
