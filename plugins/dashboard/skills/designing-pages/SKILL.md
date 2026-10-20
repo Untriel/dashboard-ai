@@ -198,7 +198,8 @@ carries its own token):
 When the user asks: a redirect from an old address (`create_redirect`, or many with `import_redirects`),
 publishing at a set time (`schedule_item`), going back to an earlier version (`list_revisions`, `get_revision`,
 `restore_revision`), a copy to start from (`duplicate_item`), leaving a page out of the sitemap or saving it for
-offline use (`update_page`), better alt texts or a focal point for an image (`update_upload`), or deleting a page
+offline use (`update_page`), better alt texts, a focal point or a new name for a file (`update_upload`; a new name
+moves every use along), or deleting a page
 (`delete_item`: Recently deleted keeps it 30 days, and `restore_revision` brings it back).
 
 ## The header, the footer and popups
