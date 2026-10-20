@@ -94,8 +94,9 @@ reads like a template; give it something to remember, within the site's language
 - **Values:** a choice or select takes one of its listed values, a slider a one-number list (`[40]`), a toggle
   `true`/`false`, rich text simple HTML (`<p>`, `<h2>`–`<h4>`, `<strong>`, `<em>`, `<a href>`, lists, and an
   image from the file library on a line of its own: `<img src="u/<key>" alt="…" data-size="sm">`, `data-size`
-  `sm`, `md`, `lg` or `full`, `data-align` `center` or `end`; a logo in a text, a photo in a blog post. No image
-  from anywhere else: it's dropped).
+  `sm`, `md`, `lg` or `full`, `data-align` `center` or `end`, `data-invert` `light` or `dark` to invert its colors
+  there (a white logo on a light page); a logo in a text, a photo in a blog post. No image from anywhere else: it's
+  dropped).
 - **List items** (a button, a slide, a line) are saved with their missing keys empty, not with the catalogue's
   `newItem`: write each item whole, starting from its `newItem`.
 - **Links:** a page of the site as `page:<id>` (`list_pages`, `find_page_by_path`), so the link follows the page
